@@ -115,6 +115,25 @@ It is not cheap and it is not for small questions. See Architecture for the agen
 
 ---
 
+## Voice
+
+Every agent writes to one standard: plain, direct English, ASD-STE100 Simplified
+Technical English as the baseline, written for a reader whose first language is
+not English.
+
+Short sentences. Active voice. The plainest word that carries the meaning. No
+buzzwords, no hedging, no padding to sound thorough.
+
+Some agents also carry a persona (the Dreamer writes flowing narrative, the
+Inversion agent is blunt). The persona sets the format. The voice standard sets
+the words. A Dreamer still writes paragraphs, but he writes them in short, plain
+sentences.
+
+Full standard in [VOICE.md](VOICE.md). It is enforced by a `## Language` section
+in all 17 skill and agent files.
+
+---
+
 ## Install
 
 Copy the three directories into your Claude Code configuration:
