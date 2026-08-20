@@ -45,7 +45,7 @@ A fifth skill, **analytical-pipeline**, chains all four in order and produces a 
 
 ## Architecture
 
-It is a DAG, not a chain. Five stages in sequence, two of which branch and rejoin.
+It is a DAG, not a chain. A directed acyclic graph: the arrows run one way, and nothing loops back into a stage that already ran. Five stages in sequence, two of which branch and rejoin.
 
 ### The sequential part
 
