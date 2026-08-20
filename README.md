@@ -43,6 +43,66 @@ A fifth skill, **analytical-pipeline**, chains all four in order and produces a 
 
 ---
 
+## Architecture
+
+It is a DAG, not a chain. Five stages in sequence, two of which branch and rejoin.
+
+### The sequential part
+
+`analytical-pipeline` runs the four frameworks in order, each injecting context into the next.
+
+```
+Cynefin  -->  Disney  -->  Pre-Mortem  -->  Inversion  -->  Synthesis
+   |            |              |               |
+ domain      Realist's      Triage +        Forward vs
+ + strategy  plan +         Mitigation      Inverse,
+             Synthesis                      plus the gap
+```
+
+The Cynefin domain changes how the Disney Realist plans: safe-to-fail experiments if the problem is Complex, prescriptive timelines if it is Complicated. Disney's plan becomes the thing the Pre-Mortem is told has already failed. The Pre-Mortem's ranked risks tell the Inversion agents where to aim.
+
+### The part that is deliberately not sequential
+
+Two frameworks are chains inside. Two are not, and that is load-bearing.
+
+```
+CHAIN                          FAN-OUT, THEN FAN-IN
+(Cynefin, Disney)              (Pre-Mortem, Inversion)
+
+  Classifier                     Imaginer A ----\
+      |                          Imaginer B -----> Triage
+      v                          Imaginer C ----/
+  Challenger                          |
+      |                               v
+      v                          Mitigation
+  Responder
+```
+
+Cynefin and Disney have to run in sequence. The Challenger cannot argue against a classification that does not exist yet. The Critic needs something built before it can attack it.
+
+Pre-Mortem and Inversion must not. If one Imaginer could see another's output, agreement between them would be contamination rather than evidence. The convergence signal in the Triage Analysis carries information only because none of the three writers could influence each other. Chain them and you destroy the thing the framework exists to produce.
+
+| Framework | Internal shape | Why |
+|---|---|---|
+| Cynefin | Chain | The Challenger needs a classification to attack |
+| Disney | Chain | Each room builds on the last; the Critic needs something to break |
+| Pre-Mortem | Fan-out, fan-in | Independent agreement is the signal; contact destroys it |
+| Inversion | Fan-out, fan-in | The bull and bear cases must not see each other |
+
+### One withheld edge
+
+In the Inversion stage, the Forward Case agent receives the original idea plus the Disney Dreamer's vision, so the bull case is built with every advantage available. The Inverse agent receives only the original idea.
+
+That asymmetry is deliberate. The pessimist stays uncontaminated by the optimist's framing.
+
+It is also why DAG is the accurate word. A chain is a straight line and cannot express an edge that is granted to one branch and withheld from the other.
+
+### Cost
+
+Acyclic means no stage feeds back into one that already ran, so every run terminates. The full pipeline spawns roughly twelve subagents and finishes. A single framework spawns two to four.
+
+---
+
 ## What it does not do
 
 It does not make the model correct. Every agent in this repo runs on a large language model and inherits its failure modes, including the ability to produce a confident, well-formatted analysis of a situation it has misread.
@@ -51,7 +111,7 @@ What it changes is the shape of what comes back. A single-pass critique gives yo
 
 No controlled measurement has been run on this. There is no eval suite, no baseline comparison, and no claim here that the multi-agent version outperforms a well-prompted single pass. What can be said is that the outputs are structurally different: they carry convergence counts, isolation guarantees, and dissent that was generated before the agent could see the consensus. Whether that is worth the token cost is a judgement, not a finding.
 
-The full pipeline spawns roughly twelve subagents. It is not cheap and it is not for small questions.
+It is not cheap and it is not for small questions. See Architecture for the agent count.
 
 ---
 
