@@ -152,19 +152,58 @@ For a project-scoped install, use `.claude/` inside the project instead of `~/.c
 
 ## Use
 
-Either invoke the skill by name, or use the slash command:
+Run one framework on its own, or run all four chained together. You choose by
+saying which one you want.
+
+### One framework
+
+Most of the time this is what you want. Pick the one that fits the question.
 
 ```
-/premortem   <your plan>
-/cynefin     <your situation>
-/disney      <your idea>
-/invert      <your decision>
+/cynefin     <your situation>     What kind of problem is this?
+/disney      <your idea>          Develop it through four mindsets
+/premortem   <your plan>          What kills this?
+/invert      <your decision>      Best case against worst case
+```
+
+Each one runs on its own. It spawns two to four agents and finishes.
+
+### All four
+
+```
 /pipeline    <anything worth all four>
 ```
 
-The skills also trigger on natural phrasing. "What could go wrong with this" reaches the Pre-Mortem. "Is this complex or complicated" reaches Cynefin. "Argue the other side" reaches Inversion.
+This runs Cynefin, then Disney, then Pre-Mortem, then Inversion, and each stage
+feeds the next. It ends with a synthesis and a kill list.
 
-Give them something with enough substance to attack. A one-sentence idea gets a one-sentence-idea analysis. The frameworks scale their depth to what you hand them, and a vague plan produces vague failure modes.
+It spawns about twelve agents. Use it on decisions that carry real weight, not
+on small questions.
+
+### Part of the pipeline
+
+The chain is modular. Ask for a subset and you get one:
+
+```
+Run the pipeline on this, but skip Cynefin.
+```
+
+The skipped stage drops out and the remaining stages adjust what they pass along.
+
+### Plain language works too
+
+You do not have to use a slash command. The skills trigger on normal phrasing:
+
+- "What could go wrong with this" reaches the Pre-Mortem.
+- "Is this complex or complicated" reaches Cynefin.
+- "Argue the other side" reaches Inversion.
+- "Stress test this idea" reaches Disney.
+
+### Give it something to work with
+
+Hand it enough substance to attack. A one-sentence idea gets a one-sentence
+analysis. The frameworks scale their depth to what you give them. A vague plan
+produces vague failure modes.
 
 ---
 
