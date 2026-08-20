@@ -1,0 +1,110 @@
+Analytical Frameworks
+Source-Available License, Attribution Required
+
+Copyright (c) 2026 The War Room. All rights reserved.
+Authored by Shadow, CEO, The War Room.
+
+---
+
+PLAIN SUMMARY
+
+Use it for anything, including paid client work. Change it to suit you. Do not
+repackage it and sell it as your own, and keep the credit line. That is the
+whole deal.
+
+The rest of this file says the same thing more carefully.
+
+
+YOU MAY
+
+- Use this material for any purpose, personal or commercial, at no cost.
+- Use it in work you are paid for, including client engagements, consulting,
+  and internal company work.
+- Modify it, extend it, and adapt it for your own use.
+- Keep and use anything it helps you produce. Output is yours. No claim is made
+  on any analysis, report, or document you create with it.
+- Share a link to this repository with anyone.
+
+
+YOU MAY NOT
+
+- Sell, license, or otherwise charge for this material or a derivative of it,
+  whether alone or as a component of a paid product, course, template pack,
+  prompt library, or subscription.
+- Republish it, in whole or in substantial part, under a different name or
+  author.
+- Remove or obscure the attribution below.
+
+Using it to do paid work is fine. Selling the material itself is not. The line
+is whether the customer is paying for your work or for these files.
+
+
+ATTRIBUTION
+
+If you publish, distribute, or present a modified version, or if you build
+something on top of it that others can see, credit it as:
+
+    Based on Analytical Frameworks by The War Room
+    https://github.com/thewarroom-ag/analytical-frameworks
+
+You do not need to credit anything in private work, or in a report you deliver
+to a client.
+
+
+ON THE UNDERLYING FRAMEWORKS
+
+The four thinking methods implemented here are not ours and no claim is made on
+them. They belong to their authors:
+
+- The Pre-Mortem is Gary Klein's, published in Harvard Business Review in 2007,
+  drawing on prospective-hindsight research from Wharton, the University of
+  Colorado, and Cornell.
+- The Cynefin Framework is Dave Snowden's, first published in 1999.
+- The Creative Strategy attributed to Walt Disney was documented by Robert Dilts.
+- Inversion as a decision discipline is Charlie Munger's, after Carl Jacobi.
+
+What is claimed here is the implementation: the multi-agent decomposition, the
+isolation rules between agents, the adversarial and consolidation stages, the
+convergence scoring, and the chaining of the four into one pipeline.
+
+
+CONTRIBUTIONS
+
+Contributions are welcome by pull request. By submitting one you agree it may
+be included under this license.
+
+
+NO WARRANTY
+
+The material is provided "as is", without warranty of any kind, express or
+implied, including warranties of merchantability, fitness for a particular
+purpose, and non-infringement.
+
+
+NO ADVICE
+
+These are thinking methods. They are not legal, financial, medical, or
+professional advice of any kind, and they are not a substitute for professional
+counsel or your own judgement.
+
+They run on large language models, which make mistakes and which will produce a
+confident, well-formatted analysis of a situation they have misread. The output
+is material for a decision. It is not the decision.
+
+
+LIABILITY
+
+To the maximum extent permitted by law, the copyright holder is not liable for
+any claim, damages, loss, or other liability arising from this material or its
+use, including any decision made in reliance on output it helped produce.
+
+
+TERMINATION
+
+Your rights under this license end automatically if you breach it. They are
+restored if you correct the breach.
+
+---
+
+This license is written in plain language for clarity. It has not been reviewed
+by counsel.
