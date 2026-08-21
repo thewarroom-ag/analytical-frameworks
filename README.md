@@ -192,11 +192,23 @@ The skipped stage drops out and the remaining stages adjust what they pass along
 
 ### Output length
 
-**You get the compact output by default.**
+**Compact is the default.** Add `--full` when you want everything.
 
-The full pipeline produces five stages of analysis. Printing all of it buries
-the answer. So you get one result line per stage, the synthesis in full, then an
-offer to expand anything you want to see.
+Both modes run the identical analysis. They differ only in how much of it
+reaches your screen.
+
+| | Compact (default) | Full (`--full`) |
+|---|---|---|
+| Agents spawned | 12 | 12 |
+| Isolation between agents | Unchanged | Unchanged |
+| Convergence counts | Same | Same |
+| Printed per stage | One result line | Every section, including each agent's own output |
+| Transitions between stages | None | One or two sentences |
+| Pipeline Synthesis | In full | In full |
+| Sections on screen | 1 | 19 |
+| Best for | Reading now, pulling the thread you care about | Output you cannot follow up on |
+
+#### What compact prints
 
 ```
 Cynefin      Complex. Challenger argued Complicated. Classification held.
@@ -204,29 +216,71 @@ Disney       Plan built. Critic raised 4 concerns, 2 unresolved.
 Pre-Mortem   15 failure scenarios, 6 Critical, 3 convergence signals.
 Inversion    Forward and inverse cases diverge on 2 of 5 core assumptions.
 
-[Pipeline Synthesis, in full]
+## Pipeline Synthesis
+   Domain Reality / The Integrated Picture / The Kill List /
+   The Conviction Stack / The Decision / Homework
 
 Full output for every stage is in context. Say which one to expand.
 ```
 
-For everything, add `--full`, or just ask:
+Four lines, then the synthesis.
+
+#### What full prints
+
+Every section above, plus all eighteen of these:
 
 ```
-/pipeline --full <your idea>
-Show me everything.
-Don't summarise.
+Cynefin      Domain Classification, Domain Challenge, Classification
+             Resolution, Domain Response, Navigation Brief
+Disney       Room 0 The Outsider, Room 1 The Dreamer, Room 2 The Realist,
+             Room 3 The Critic, The Fifth Wall Synthesis
+Pre-Mortem   Failure Scenarios (summary across all three Imaginers),
+             Triage Analysis, Mitigation Plan, Pre-Mortem Summary
+Inversion    The Forward Case, The Inversion Case, Delta Analysis, The Verdict
 ```
 
-**The flag changes what is printed, never what is run.** All twelve agents run
-either way. The isolation between them is unchanged. The convergence counts
-still come from writers who could not see each other's work. Expanding a stage
-after the fact costs nothing, because the analysis already happened.
+Plus a bridge between each stage.
 
-Use `--full` when you cannot ask a follow-up, for example when the output goes
-straight into a document you will send on. You get one pass at it, so take all
-of it.
+#### What compact does not cost you
 
-This applies to a single framework too, not only the pipeline.
+Nothing about the analysis. This is the important part.
+
+Every agent runs in both modes. Nobody is skipped and nobody is given less to
+work with. The three Failure Imaginers still write in isolation, so when two of
+them land on the same risk, that convergence still means what it means. The
+Forward and Inversion cases are still built apart.
+
+Compact decides **when you read the detail**, not whether it was produced.
+
+#### Expanding a stage
+
+The full output sits in context after the run. Ask for any part of it:
+
+```
+Expand the Pre-Mortem.
+Show me what the Critic said.
+What did the third Imaginer find?
+```
+
+You get that section printed in full. It costs only the printing, because the
+work already happened.
+
+#### How to choose
+
+Use the default when you are at the keyboard and can ask a follow-up. You read
+four lines and a synthesis, then pull only the thread you care about.
+
+Use `--full` when you get one pass and no second chance:
+
+- The output goes into a document, an email, or a report you send on.
+- Somebody else will read it without you there to expand anything.
+- You are auditing the reasoning itself rather than acting on the conclusion.
+
+#### It applies to a single framework too
+
+`/premortem` alone prints four sections in full mode: Failure Scenarios, Triage
+Analysis, Mitigation Plan, Pre-Mortem Summary. By default it prints one result
+line, then the Mitigation Plan and Summary. Same rule, smaller scale.
 
 ### Plain language works too
 
