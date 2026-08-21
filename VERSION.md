@@ -1,5 +1,5 @@
 Analytical Frameworks
 
-2.0.0
+2.1.0
 
 Five skills, twelve agents, five slash commands.

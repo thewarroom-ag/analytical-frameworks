@@ -1,5 +1,6 @@
 ---
 name: analytical-pipeline
+author: Shadow, CEO of The War Room
 description: |
   Run the full analytical pipeline: Cynefin → Disney → Pre-Mortem → Inversion
   on any idea, plan, or decision. Chains all four analytical frameworks in
@@ -271,6 +272,31 @@ Technical English is the baseline.
 
 Where a persona voice above sets the format (prose or lists), the persona wins.
 On word choice and sentence length, this section wins.
+
+## Casework handoff
+
+If a `CASE.md` file exists in the working directory or a parent, append a
+handoff note to it when you finish:
+
+```
+## Handoff: stress, <YYYY-MM-DD>
+Answered: <the question this stage actually settled>
+Still open: <what it could not settle>
+Next: <tool>, because <reason>
+Artifact: <path, relative to the case folder>
+Would change this: <the fact that would overturn the answer>
+```
+
+All six lines are always present. Write `none` where one does not apply,
+because a missing line reads as an oversight and `none` reads as an answer.
+When the work is finished, write `Next: nothing, the work is finished`, which
+is the common case.
+
+The artifact from this skill is the Pipeline Synthesis and the kill list,
+written to a file in the case folder.
+
+If there is no `CASE.md`, behave exactly as you do now. The format is defined
+by [Casework](https://github.com/thewarroom-ag/casework).
 
 ## Attribution
 
