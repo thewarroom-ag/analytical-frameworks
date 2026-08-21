@@ -299,6 +299,22 @@ produces vague failure modes.
 
 ---
 
+## Companion
+
+**[Decision Lenses](https://github.com/thewarroom-ag/decision-lenses)** is the
+other half of this. Same house, different job.
+
+These four frameworks take an idea you already have and try to break it. Decision
+Lenses takes a choice you have to make, runs thirteen angles over it, compresses
+them into three or four branches tagged for whether you can undo them, and then
+commits to one.
+
+Reach for this repo when you have a plan and want to know what kills it. Reach
+for that one when you have two options and a date. It is a single skill with no
+subagents, so a run costs a fraction of a pipeline.
+
+---
+
 ## Attribution
 
 The four thinking methods are not ours. Klein, Snowden, Disney by way of Dilts, and Munger after Jacobi. Each skill cites its source in the text.
