@@ -8,6 +8,11 @@ disney-creative-strategy skill, which will spawn the four persona subagents
 passing each room's output forward to the next. After all four rooms complete,
 produce the Fifth Wall synthesis.
 
+If $ARGUMENTS contains `--compact` (or the user asks to keep it short, or
+wants just the summary), run the skill in Compact mode: one result line per
+stage, then the final synthesis in full, then an offer to expand any part.
+Strip the flag from the input before analysing it.
+
 The idea to analyze:
 
 $ARGUMENTS

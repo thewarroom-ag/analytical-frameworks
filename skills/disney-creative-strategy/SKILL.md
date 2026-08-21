@@ -193,6 +193,31 @@ then the Critic. This trades some conversational threading for speed. Only
 do this if the user explicitly asks for it or the idea is simple enough that
 the Outsider's framing won't materially change what the Dreamer produces.
 
+## Compact mode
+
+Turn this on when the user asks for it (`--compact`, "keep it short", "just the
+summary"), or when the analytical-pipeline skill tells you compact mode is on.
+
+**It changes what you print. It does not change what you run.** Every agent still
+runs. The isolation between them is unchanged. You get the same analysis with
+less of it on screen.
+
+What you print instead of the per-agent sections:
+
+- One line stating the result. Give the finding and the counts. A number beats an
+  adjective. Under 100 characters.
+- Then **the Fifth Wall Synthesis** in full. Do not compress it. It is the payoff.
+- Then one line: `Full agent output is in context. Say which part to expand.`
+
+Example of the one line:
+
+```
+Plan built. Critic raised 4 concerns, 2 unresolved.
+```
+
+If the user asks to expand, print that section in full. The agents already ran,
+so it costs nothing but the printing.
+
 ## Language
 
 Write for a reader whose first language is not English. ASD-STE100 Simplified

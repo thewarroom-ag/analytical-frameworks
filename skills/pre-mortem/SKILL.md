@@ -156,6 +156,31 @@ Realist's plan and Critic's concerns from the Disney session. Feed the Realist's
 plan as THE PLAN and append the Critic's concerns as additional context. The
 Imaginers should go beyond what the Critic already identified.
 
+## Compact mode
+
+Turn this on when the user asks for it (`--compact`, "keep it short", "just the
+summary"), or when the analytical-pipeline skill tells you compact mode is on.
+
+**It changes what you print. It does not change what you run.** Every agent still
+runs. The isolation between them is unchanged. You get the same analysis with
+less of it on screen.
+
+What you print instead of the per-agent sections:
+
+- One line stating the result. Give the finding and the counts. A number beats an
+  adjective. Under 100 characters.
+- Then **the Mitigation Plan and Pre-Mortem Summary** in full. Do not compress it. It is the payoff.
+- Then one line: `Full agent output is in context. Say which part to expand.`
+
+Example of the one line:
+
+```
+15 failure scenarios, 6 Critical, 3 convergence signals.
+```
+
+If the user asks to expand, print that section in full. The agents already ran,
+so it costs nothing but the printing.
+
 ## Language
 
 Write for a reader whose first language is not English. ASD-STE100 Simplified

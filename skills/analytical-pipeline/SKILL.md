@@ -164,6 +164,71 @@ framed as an actionable investigation, not an abstract musing.]
   separate analytical systems converging on the same concern is a signal that
   demands attention.
 
+## Compact mode
+
+The full pipeline prints five stages of analysis before the synthesis. That is a
+lot of reading, and the exposition can bury the answer.
+
+Compact mode fixes the reading, not the thinking.
+
+**It changes what you print. It does not change what you run.** All twelve agents
+still run. The isolation between them is unchanged. The convergence counts still
+come from writers who could not see each other. You get the same analysis with
+less of it on screen.
+
+### How it is requested
+
+Any of these turn it on:
+
+- `/pipeline --compact <idea>`
+- "Run the pipeline on this, compact."
+- "Keep it short", "just the summary", "skip the exposition".
+
+Pass the request down. When you invoke each framework, tell it compact mode is
+on, so it suppresses its own per-agent output too. A compact pipeline that calls
+a verbose Disney is not compact.
+
+### What you print
+
+One line per stage, as each finishes. State the RESULT, not the process. No
+transitions, no narrative bridges, no per-agent output.
+
+```
+Cynefin      Complex. Challenger argued Complicated. Classification held.
+Disney       Plan built. Critic raised 4 concerns, 2 unresolved.
+Pre-Mortem   15 failure scenarios, 6 Critical, 3 convergence signals.
+Inversion    Forward and inverse cases diverge on 2 of 5 core assumptions.
+```
+
+Rules for a stage line:
+
+- One line. Under 100 characters.
+- Give the finding and the counts. A number beats an adjective.
+- Never describe what the agents did. The reader knows.
+
+### Then print the Pipeline Synthesis in full
+
+Do not compress the synthesis. It is the payoff and it is already short. Every
+section stays: Domain Reality, The Integrated Picture, The Kill List, The
+Conviction Stack, The Decision, Homework.
+
+### Then offer the detail
+
+End with one line:
+
+```
+Full output for every stage is in context. Say which one to expand.
+```
+
+The agents have already run. Expanding a stage costs nothing but the printing.
+If the user asks, print that stage in full.
+
+### When not to use it
+
+If the user is going to act on this alone, without asking you anything else,
+print it long. Compact mode assumes the reader will pull the thread they care
+about. A reader who will not ask a follow-up needs the detail on the first pass.
+
 ## Partial pipeline
 
 If the user says "run the pipeline but skip Cynefin" or similar, honor that.

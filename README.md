@@ -190,6 +190,40 @@ Run the pipeline on this, but skip Cynefin.
 
 The skipped stage drops out and the remaining stages adjust what they pass along.
 
+### Compact mode
+
+The full pipeline prints five stages before it reaches the synthesis. That is a
+lot of reading, and the exposition can bury the answer.
+
+Add `--compact` to any command, or just ask for it:
+
+```
+/pipeline --compact <your idea>
+Run the pipeline on this, compact.
+Keep it short.
+```
+
+You get one result line per stage, then the synthesis in full, then an offer to
+expand anything you want to see.
+
+```
+Cynefin      Complex. Challenger argued Complicated. Classification held.
+Disney       Plan built. Critic raised 4 concerns, 2 unresolved.
+Pre-Mortem   15 failure scenarios, 6 Critical, 3 convergence signals.
+Inversion    Forward and inverse cases diverge on 2 of 5 core assumptions.
+
+[Pipeline Synthesis, in full]
+
+Full output for every stage is in context. Say which one to expand.
+```
+
+**Compact changes what is printed, not what is run.** All twelve agents still
+run. The isolation between them is unchanged. The convergence counts still come
+from writers who could not see each other's work. Expanding a stage later costs
+nothing, because the analysis already happened.
+
+It works on a single framework too, not only the pipeline.
+
 ### Plain language works too
 
 You do not have to use a slash command. The skills trigger on normal phrasing:
