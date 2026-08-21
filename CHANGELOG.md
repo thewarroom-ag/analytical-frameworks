@@ -1,5 +1,14 @@
 # Changelog
 
+## 2.0.0
+
+Breaking: compact output is now the DEFAULT. Add `--full` for the old behaviour.
+
+- Compact by default on every skill and command. One result line per stage, the
+  synthesis in full, then an offer to expand. Still runs every agent; the flag
+  changes what is printed, never what runs.
+- `--full` restores the complete per-stage output.
+
 ## 1.1.0
 
 - Compact mode on every skill and command. One result line per stage, the

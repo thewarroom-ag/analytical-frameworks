@@ -195,20 +195,20 @@ Cynefin works well as a pre-filter before other analytical frameworks:
 - Pre-Mortem and Inversion work in any domain but are most valuable in
   Complicated and Complex where the plan exists but hasn't been stress-tested
 
-## Compact mode
+## Output length
 
-Turn this on when the user asks for it (`--compact`, "keep it short", "just the
-summary"), or when the analytical-pipeline skill tells you compact mode is on.
+**Compact is the default.** Print the summary unless the user asks for
+everything, or unless the analytical-pipeline skill tells you full mode is on.
 
-**It changes what you print. It does not change what you run.** Every agent still
-runs. The isolation between them is unchanged. You get the same analysis with
-less of it on screen.
+**This governs what you print. It never governs what you run.** Every agent runs
+either way. The isolation between them is unchanged. You are choosing when the
+user reads the detail, not whether it exists.
 
-What you print instead of the per-agent sections:
+### Default: compact
 
 - One line stating the result. Give the finding and the counts. A number beats an
   adjective. Under 100 characters.
-- Then **the Navigation Brief** in full. Do not compress it. It is the payoff.
+- Then **the Navigation Brief** in full. Never compress it. It is the payoff.
 - Then one line: `Full agent output is in context. Say which part to expand.`
 
 Example of the one line:
@@ -219,6 +219,14 @@ Complex. Challenger argued Complicated. Classification held.
 
 If the user asks to expand, print that section in full. The agents already ran,
 so it costs nothing but the printing.
+
+### Full mode
+
+Print every section, including each agent's own output, when the user asks:
+`--full`, "show me everything", "don't summarise".
+
+Also use full mode when the user cannot ask a follow-up, for example when the
+output is going straight into a document they will send on.
 
 ## Language
 

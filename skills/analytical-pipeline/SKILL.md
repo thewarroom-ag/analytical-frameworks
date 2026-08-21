@@ -42,6 +42,11 @@ All four must be installed:
 
 ## Orchestration
 
+The "present the output" steps below describe FULL mode. In the default compact
+mode, replace each one with the single-line stage summary from Output length.
+The agents you spawn and the context you pass between stages are identical in
+both modes.
+
 ### Stage 1: Cynefin
 
 Run the full Cynefin skill (Classifier → Challenger → Resolution → Responder).
@@ -146,12 +151,12 @@ framed as an actionable investigation, not an abstract musing.]
 
 ## Calibration
 
-- **This is a long analysis.** Set expectations up front. Tell the user this
-  will take several minutes and produce substantial output across all four
-  frameworks plus a synthesis.
-- **Transitions matter.** Between each stage, provide a brief 1-2 sentence
-  bridge that tells the user what was learned and what's happening next. This
-  keeps the output readable despite its length.
+- **This takes a few minutes.** Say so up front. Twelve agents run either way.
+  What changes is how much of their output reaches the screen. See Output
+  length: compact is the default.
+- **Transitions belong to full mode only.** In full mode, bridge between stages
+  with one or two sentences. In the default compact mode, the one-line stage
+  summary IS the transition. Do not write both.
 - **The Pipeline Synthesis is the payoff.** Each individual framework's output
   is valuable on its own, but the synthesis that identifies cross-framework
   convergence signals is what justifies running the full pipeline. Invest
@@ -164,34 +169,24 @@ framed as an actionable investigation, not an abstract musing.]
   separate analytical systems converging on the same concern is a signal that
   demands attention.
 
-## Compact mode
+## Output length
 
-The full pipeline prints five stages of analysis before the synthesis. That is a
-lot of reading, and the exposition can bury the answer.
+**Compact is the default.** Print the summary unless the user asks for
+everything.
 
-Compact mode fixes the reading, not the thinking.
+The full pipeline produces five stages of analysis. Printing all of it buries
+the answer. The analysis is worth running. It is not always worth reading in
+full on the first pass.
 
-**It changes what you print. It does not change what you run.** All twelve agents
-still run. The isolation between them is unchanged. The convergence counts still
-come from writers who could not see each other. You get the same analysis with
-less of it on screen.
+**This governs what you print. It never governs what you run.** All twelve agents
+run every time. The isolation between them is unchanged. The convergence counts
+still come from writers who could not see each other. You are choosing when the
+user reads the detail, not whether it exists.
 
-### How it is requested
+### Default: compact
 
-Any of these turn it on:
-
-- `/pipeline --compact <idea>`
-- "Run the pipeline on this, compact."
-- "Keep it short", "just the summary", "skip the exposition".
-
-Pass the request down. When you invoke each framework, tell it compact mode is
-on, so it suppresses its own per-agent output too. A compact pipeline that calls
-a verbose Disney is not compact.
-
-### What you print
-
-One line per stage, as each finishes. State the RESULT, not the process. No
-transitions, no narrative bridges, no per-agent output.
+Print one line per stage, as each finishes. State the RESULT, not the process.
+No transitions, no narrative bridges, no per-agent output.
 
 ```
 Cynefin      Complex. Challenger argued Complicated. Classification held.
@@ -206,9 +201,13 @@ Rules for a stage line:
 - Give the finding and the counts. A number beats an adjective.
 - Never describe what the agents did. The reader knows.
 
-### Then print the Pipeline Synthesis in full
+Tell each framework you invoke that compact is on, so it suppresses its own
+per-agent output too. A compact pipeline that calls a verbose Disney is not
+compact.
 
-Do not compress the synthesis. It is the payoff and it is already short. Every
+### Then the Pipeline Synthesis, in full
+
+Never compress the synthesis. It is the payoff and it is already short. Every
 section stays: Domain Reality, The Integrated Picture, The Kill List, The
 Conviction Stack, The Decision, Homework.
 
@@ -223,11 +222,19 @@ Full output for every stage is in context. Say which one to expand.
 The agents have already run. Expanding a stage costs nothing but the printing.
 If the user asks, print that stage in full.
 
-### When not to use it
+### Full mode
 
-If the user is going to act on this alone, without asking you anything else,
-print it long. Compact mode assumes the reader will pull the thread they care
-about. A reader who will not ask a follow-up needs the detail on the first pass.
+Print every stage in full when the user asks for it:
+
+- `/pipeline --full <idea>`
+- "Show me everything", "full output", "don't summarise".
+
+In full mode, print each stage's complete output as it finishes, with a one or
+two sentence bridge between stages saying what was learned and what runs next.
+
+Also use full mode when the user cannot ask a follow-up. If the output is going
+into a document, an email, or a report they will send on, they get one pass at
+it. Print it long.
 
 ## Partial pipeline
 

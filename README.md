@@ -190,21 +190,13 @@ Run the pipeline on this, but skip Cynefin.
 
 The skipped stage drops out and the remaining stages adjust what they pass along.
 
-### Compact mode
+### Output length
 
-The full pipeline prints five stages before it reaches the synthesis. That is a
-lot of reading, and the exposition can bury the answer.
+**You get the compact output by default.**
 
-Add `--compact` to any command, or just ask for it:
-
-```
-/pipeline --compact <your idea>
-Run the pipeline on this, compact.
-Keep it short.
-```
-
-You get one result line per stage, then the synthesis in full, then an offer to
-expand anything you want to see.
+The full pipeline produces five stages of analysis. Printing all of it buries
+the answer. So you get one result line per stage, the synthesis in full, then an
+offer to expand anything you want to see.
 
 ```
 Cynefin      Complex. Challenger argued Complicated. Classification held.
@@ -217,12 +209,24 @@ Inversion    Forward and inverse cases diverge on 2 of 5 core assumptions.
 Full output for every stage is in context. Say which one to expand.
 ```
 
-**Compact changes what is printed, not what is run.** All twelve agents still
-run. The isolation between them is unchanged. The convergence counts still come
-from writers who could not see each other's work. Expanding a stage later costs
-nothing, because the analysis already happened.
+For everything, add `--full`, or just ask:
 
-It works on a single framework too, not only the pipeline.
+```
+/pipeline --full <your idea>
+Show me everything.
+Don't summarise.
+```
+
+**The flag changes what is printed, never what is run.** All twelve agents run
+either way. The isolation between them is unchanged. The convergence counts
+still come from writers who could not see each other's work. Expanding a stage
+after the fact costs nothing, because the analysis already happened.
+
+Use `--full` when you cannot ask a follow-up, for example when the output goes
+straight into a document you will send on. You get one pass at it, so take all
+of it.
+
+This applies to a single framework too, not only the pipeline.
 
 ### Plain language works too
 
